@@ -1,30 +1,30 @@
-import java.util.Scanner;
+п»їimport java.util.Scanner;
 
-// Класс Оценка
+// РљР»Р°СЃСЃ РћС†РµРЅРєР°
 public class Mark
 {
-    private int value = 0;          // Оценка
+    private int value = 0;          // РћС†РµРЅРєР°
 
 
-    	// Конструктор
+    	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	public Mark()
 	{
 	    value = 0;
 	}
 	
-	// Инициализация структуры Оценка
+	// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚СЂСѓРєС‚СѓСЂС‹ РћС†РµРЅРєР°
 	public void Set(int v)
 	{
 	    value = v;
 	}
 	
-	// Получение оценки
+	// РџРѕР»СѓС‡РµРЅРёРµ РѕС†РµРЅРєРё
 	public int Get()
 	{
 	    return value;
 	}
 	
-	// Ввод данных в структуру Оценка
+	// Р’РІРѕРґ РґР°РЅРЅС‹С… РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ РћС†РµРЅРєР°
 	public void InpMark()
 	{
 	    //Scanner in = new Scanner(System.in);
@@ -37,7 +37,7 @@ public class Mark
 	    int number = 0;
 	    while (fl == 0)
 	    {
-		System.out.print("Введите оценку: ");
+		System.out.print("Р’РІРµРґРёС‚Рµ РѕС†РµРЅРєСѓ: ");
 		
 		if (in.hasNextInt()) {
           	 	number = in.nextInt();
@@ -46,7 +46,7 @@ public class Mark
 		        fl = 1;
        		} 
 		else {
-           		System.out.println("Извините, но это явно не число. Введите число заново!");
+           		System.out.println("РР·РІРёРЅРёС‚Рµ, РЅРѕ СЌС‚Рѕ СЏРІРЅРѕ РЅРµ С‡РёСЃР»Рѕ. Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ Р·Р°РЅРѕРІРѕ!");
 			System.out.println("\n");
        		}
 	    }
@@ -54,10 +54,10 @@ public class Mark
 	    in.close();
 	}
 	
-	// Вывод данных из структуры
+	// Р’С‹РІРѕРґ РґР°РЅРЅС‹С… РёР· СЃС‚СЂСѓРєС‚СѓСЂС‹
 	public void DisplayValue()
 	{
-	    System.out.println("Оценка: " + value);
+	    System.out.println("РћС†РµРЅРєР°: " + value);
 	
 	}
 	

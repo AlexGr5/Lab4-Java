@@ -1,17 +1,17 @@
-import java.util.Scanner;
+п»їimport java.util.Scanner;
 
-// Класс Ученик
+// РљР»Р°СЃСЃ РЈС‡РµРЅРёРє
 public class Student
 {
-    private String fam = "";            	// Фамилия
-    private String name = "";           	// Имя
-    private String otch = "";           	// Отчество
-    private Mark[] marks = new Mark[20];        // Массив оценок
-    private Lesson[] lessons = new Lesson[20];  // Массив уроков
-    private int countLess = 0;          	// Текущее кол-во уроков
+    private String fam = "";            	// Р¤Р°РјРёР»РёСЏ
+    private String name = "";           	// РРјСЏ
+    private String otch = "";           	// РћС‚С‡РµСЃС‚РІРѕ
+    private Mark[] marks = new Mark[20];        // РњР°СЃСЃРёРІ РѕС†РµРЅРѕРє
+    private Lesson[] lessons = new Lesson[20];  // РњР°СЃСЃРёРІ СѓСЂРѕРєРѕРІ
+    private int countLess = 0;          	// РўРµРєСѓС‰РµРµ РєРѕР»-РІРѕ СѓСЂРѕРєРѕРІ
 
 
-// Конструктор
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 public Student()
 {
     fam = "";
@@ -33,7 +33,7 @@ public Student()
     }
 }
 
-// Очищение всех полей структуры Ученик (Student)
+// РћС‡РёС‰РµРЅРёРµ РІСЃРµС… РїРѕР»РµР№ СЃС‚СЂСѓРєС‚СѓСЂС‹ РЈС‡РµРЅРёРє (Student)
 public void Null()
 {
 
@@ -57,7 +57,7 @@ public void Null()
 }
 
 
-// Функции получения значений полей
+// Р¤СѓРЅРєС†РёРё РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёР№ РїРѕР»РµР№
 public String GetFam()
 {
     return this.fam;
@@ -93,7 +93,7 @@ public Lesson GetLessByNumber(int i)
 
 
 
-// Инициализация структуры Ученик
+// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚СЂСѓРєС‚СѓСЂС‹ РЈС‡РµРЅРёРє
 public void Set(String Fam, String Name, String Otch, Mark mas_m[], int LenMark, Lesson mas_l[], int LenLess)
 {
     this.fam = Fam;
@@ -115,24 +115,24 @@ public void Set(String Fam, String Name, String Otch, Mark mas_m[], int LenMark,
     }
 }
 
-// Ввод ФИО ученика в структуру
+// Р’РІРѕРґ Р¤РРћ СѓС‡РµРЅРёРєР° РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ
 public void InpStudFIO()
 {
     //Scanner in = new Scanner(System.in);
     String os = System.getProperty("os.name");
     String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
     Scanner in = new Scanner(System.in, consoleEncoding);
-    System.out.print("Введите Фамилию ученика: ");
+    System.out.print("Р’РІРµРґРёС‚Рµ Р¤Р°РјРёР»РёСЋ СѓС‡РµРЅРёРєР°: ");
     fam = in.nextLine();
-    System.out.print("Введите Имя ученика: ");
+    System.out.print("Р’РІРµРґРёС‚Рµ РРјСЏ СѓС‡РµРЅРёРєР°: ");
     name = in.nextLine();
-    System.out.print("Введите Отчество ученика: ");
+    System.out.print("Р’РІРµРґРёС‚Рµ РћС‚С‡РµСЃС‚РІРѕ СѓС‡РµРЅРёРєР°: ");
     otch = in.nextLine();
     in.close();
 }
 
-// Добавление к ученику урока
-// 0 - не удачно, 1 - удачно
+// Р”РѕР±Р°РІР»РµРЅРёРµ Рє СѓС‡РµРЅРёРєСѓ СѓСЂРѕРєР°
+// 0 - РЅРµ СѓРґР°С‡РЅРѕ, 1 - СѓРґР°С‡РЅРѕ
 public boolean AddLess(Lesson ls)
 {
     boolean fl = false;
@@ -149,8 +149,8 @@ public boolean AddLess(Lesson ls)
     return fl;
 }
 
-// Добавление к ученику урока и оценки
-// 0 - не удачно, 1 - удачно
+// Р”РѕР±Р°РІР»РµРЅРёРµ Рє СѓС‡РµРЅРёРєСѓ СѓСЂРѕРєР° Рё РѕС†РµРЅРєРё
+// 0 - РЅРµ СѓРґР°С‡РЅРѕ, 1 - СѓРґР°С‡РЅРѕ
 public boolean AddLessAndMark(Lesson ls, Mark m)
 {
     boolean fl = false;
@@ -168,8 +168,8 @@ public boolean AddLessAndMark(Lesson ls, Mark m)
     return fl;
 }
 
-// Добавление к ученику оценки к конкретному предмету
-// 0 - не удачно, 1 - удачно
+// Р”РѕР±Р°РІР»РµРЅРёРµ Рє СѓС‡РµРЅРёРєСѓ РѕС†РµРЅРєРё Рє РєРѕРЅРєСЂРµС‚РЅРѕРјСѓ РїСЂРµРґРјРµС‚Сѓ
+// 0 - РЅРµ СѓРґР°С‡РЅРѕ, 1 - СѓРґР°С‡РЅРѕ
 public boolean AddMark(Lesson ls, Mark m)
 {
     boolean fl = false;
@@ -195,14 +195,14 @@ public boolean AddMark(Lesson ls, Mark m)
     return fl;
 }
 
-// Вывод ученика
-// Передаем ученика и флаг для различного вывода уроков и оценок
-// fl_out (0 или 1)
+// Р’С‹РІРѕРґ СѓС‡РµРЅРёРєР°
+// РџРµСЂРµРґР°РµРј СѓС‡РµРЅРёРєР° Рё С„Р»Р°Рі РґР»СЏ СЂР°Р·Р»РёС‡РЅРѕРіРѕ РІС‹РІРѕРґР° СѓСЂРѕРєРѕРІ Рё РѕС†РµРЅРѕРє
+// fl_out (0 РёР»Рё 1)
 public void DisplayShortInfo()
 {
-    System.out.println("ФИО ученика: " + fam + " " + name + " " + otch);
+    System.out.println("Р¤РРћ СѓС‡РµРЅРёРєР°: " + fam + " " + name + " " + otch);
 
-    System.out.println("Уроки:");
+    System.out.println("РЈСЂРѕРєРё:");
     int i = 0;
     while (lessons[i].GetNameLess() != "")
     {
@@ -214,18 +214,18 @@ public void DisplayShortInfo()
 
 
 
-// Вывод ученика с всеми предметами, даже пустыми
+// Р’С‹РІРѕРґ СѓС‡РµРЅРёРєР° СЃ РІСЃРµРјРё РїСЂРµРґРјРµС‚Р°РјРё, РґР°Р¶Рµ РїСѓСЃС‚С‹РјРё
 public void DispFullInfo()
 {
-    System.out.println("ФИО ученика: " + fam + " " + name + " " + otch);
+    System.out.println("Р¤РРћ СѓС‡РµРЅРёРєР°: " + fam + " " + name + " " + otch);
 
 
-    System.out.println("Уроки:");
+    System.out.println("РЈСЂРѕРєРё:");
     for (int i = 0; i < 20; i++)
     {
         lessons[i].DisplayInfo();
     }
-    System.out.println("Оценки:");
+    System.out.println("РћС†РµРЅРєРё:");
     for (int i = 0; i < 20; i++)
     {
         marks[i].DisplayValue();

@@ -1,14 +1,14 @@
-import java.util.Scanner;
+п»їimport java.util.Scanner;
 
-// Класс Учитель
+// РљР»Р°СЃСЃ РЈС‡РёС‚РµР»СЊ
 public class Teacher
 {
-    private String fam = "";        // Фамилия
-    private String name = "";       // Имя
-    private String otch = "";       // Отчество
+    private String fam = "";        // Р¤Р°РјРёР»РёСЏ
+    private String name = "";       // РРјСЏ
+    private String otch = "";       // РћС‚С‡РµСЃС‚РІРѕ
 
 
-	// Конструктор
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	public Teacher()
 	{
 	    fam = "";
@@ -17,7 +17,7 @@ public class Teacher
 	}
 	
 	
-	// Фун-ии получения данных из полей
+	// Р¤СѓРЅ-РёРё РїРѕР»СѓС‡РµРЅРёСЏ РґР°РЅРЅС‹С… РёР· РїРѕР»РµР№
 	public String GetFam()
 	{
 	    return this.fam;
@@ -33,7 +33,7 @@ public class Teacher
 	    return this.otch;
 	}
 	
-	// Инициализация структуры Учитель
+	// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚СЂСѓРєС‚СѓСЂС‹ РЈС‡РёС‚РµР»СЊ
 	public void Set(String Fam_s, String Name_s, String Otch_s)
 	{
 	    this.fam = Fam_s;
@@ -41,7 +41,7 @@ public class Teacher
 	    this.otch = Otch_s;
 	}
 	
-	// Ввод учителя
+	// Р’РІРѕРґ СѓС‡РёС‚РµР»СЏ
 	public void InpFIO()
 	{
 	    //String encoding = System.getProperty("console.encoding", "utf-8");
@@ -52,19 +52,19 @@ public class Teacher
             Scanner in = new Scanner(System.in, consoleEncoding);
 
 	    //Scanner in = new Scanner(System.in);  
-	    System.out.println("Введите Фамилию учителя: ");
+	    System.out.println("Р’РІРµРґРёС‚Рµ Р¤Р°РјРёР»РёСЋ СѓС‡РёС‚РµР»СЏ: ");
 	    fam = in.nextLine();
-	    System.out.println("Введите имя учителя: ");
+	    System.out.println("Р’РІРµРґРёС‚Рµ РёРјСЏ СѓС‡РёС‚РµР»СЏ: ");
 	    name = in.nextLine();
-	    System.out.println("Введите отчество учителя: ");
+	    System.out.println("Р’РІРµРґРёС‚Рµ РѕС‚С‡РµСЃС‚РІРѕ СѓС‡РёС‚РµР»СЏ: ");
 	    otch = in.nextLine();
 	    in.close();
 	}
 	
-	// Вывод учителя
+	// Р’С‹РІРѕРґ СѓС‡РёС‚РµР»СЏ
 	public void DisplayInfo()
 	{
-	    System.out.println("ФИО учителя: " + fam + " " + name + " " + otch);
+	    System.out.println("Р¤РРћ СѓС‡РёС‚РµР»СЏ: " + fam + " " + name + " " + otch);
 	
 	}
 	

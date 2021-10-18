@@ -1,15 +1,15 @@
-import java.util.Scanner;
+п»їimport java.util.Scanner;
 
-// Класс Класс
+// РљР»Р°СЃСЃ РљР»Р°СЃСЃ
 public class MyClass
 {
-    private String className = "";          		// Название класса
-    private String yearOfStudy = "";        		// Год обучения
-    private int contStuds = 0;              		// Текущее кол-во учеников
-    private Student[] students = new Student[32];   	// Массив учеников
+    private String className = "";          		// РќР°Р·РІР°РЅРёРµ РєР»Р°СЃСЃР°
+    private String yearOfStudy = "";        		// Р“РѕРґ РѕР±СѓС‡РµРЅРёСЏ
+    private int contStuds = 0;              		// РўРµРєСѓС‰РµРµ РєРѕР»-РІРѕ СѓС‡РµРЅРёРєРѕРІ
+    private Student[] students = new Student[32];   	// РњР°СЃСЃРёРІ СѓС‡РµРЅРёРєРѕРІ
 
     
-// Конструктор
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 public MyClass()
 {
     className = "";
@@ -23,7 +23,7 @@ public MyClass()
     }
 }
 
-// Очищение полей структуры Класс
+// РћС‡РёС‰РµРЅРёРµ РїРѕР»РµР№ СЃС‚СЂСѓРєС‚СѓСЂС‹ РљР»Р°СЃСЃ
 public void Null()
 {
     className = "";
@@ -37,7 +37,7 @@ public void Null()
     }
 }
 
-// Инициализация структуры Класс
+// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚СЂСѓРєС‚СѓСЂС‹ РљР»Р°СЃСЃ
 public void Set(String Name, String Year, Student mas[], int LenStud)
 {
     this.className = Name;
@@ -52,7 +52,7 @@ public void Set(String Name, String Year, Student mas[], int LenStud)
 }
 
 
-// Функции получения значений полей
+// Р¤СѓРЅРєС†РёРё РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёР№ РїРѕР»РµР№
 public String GetName()
 {
     return className;
@@ -65,22 +65,22 @@ public String GetYear()
 
 
 
-// Ввод данных в структуру Класс
+// Р’РІРѕРґ РґР°РЅРЅС‹С… РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ РљР»Р°СЃСЃ
 public void InpNameYear()
 {
     //Scanner in = new Scanner(System.in);
     String os = System.getProperty("os.name");
     String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
     Scanner in = new Scanner(System.in, consoleEncoding);
-    System.out.print("Введите название класса: ");
+    System.out.print("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РєР»Р°СЃСЃР°: ");
     className = in.nextLine();
     System.out.println("");
-    System.out.print("Введите год обучения: ");
+    System.out.print("Р’РІРµРґРёС‚Рµ РіРѕРґ РѕР±СѓС‡РµРЅРёСЏ: ");
     yearOfStudy = in.nextLine();
     System.out.println("");
 }
 
-// Добавление к классу ченика
+// Р”РѕР±Р°РІР»РµРЅРёРµ Рє РєР»Р°СЃСЃСѓ С‡РµРЅРёРєР°
 public boolean AddStud(Student st)
 {
     boolean fl = false;
@@ -94,15 +94,15 @@ public boolean AddStud(Student st)
     return fl;
 }
 
-// Вывод данных из структуры Класс
-// fl_out (0 или 1)
+// Р’С‹РІРѕРґ РґР°РЅРЅС‹С… РёР· СЃС‚СЂСѓРєС‚СѓСЂС‹ РљР»Р°СЃСЃ
+// fl_out (0 РёР»Рё 1)
 public void DisplayShortInfo()
 {
     Scanner in = new Scanner(System.in);
-    System.out.println("Название класса: " + className);
-    System.out.println("Год обучения: " + yearOfStudy);
+    System.out.println("РќР°Р·РІР°РЅРёРµ РєР»Р°СЃСЃР°: " + className);
+    System.out.println("Р“РѕРґ РѕР±СѓС‡РµРЅРёСЏ: " + yearOfStudy);
     System.out.println("");
-    System.out.println("Ученики:");
+    System.out.println("РЈС‡РµРЅРёРєРё:");
 
     int i = 0;
     while (students[i].GetFam() != "")
@@ -113,14 +113,14 @@ public void DisplayShortInfo()
 
 }
 
-// Выод всех данных из структуры Класс
+// Р’С‹РѕРґ РІСЃРµС… РґР°РЅРЅС‹С… РёР· СЃС‚СЂСѓРєС‚СѓСЂС‹ РљР»Р°СЃСЃ
 public void DispFullInfo()
 {
     Scanner in = new Scanner(System.in);
-    System.out.println("Название класса: " + className);
-    System.out.println("Год обучения: " + yearOfStudy);
+    System.out.println("РќР°Р·РІР°РЅРёРµ РєР»Р°СЃСЃР°: " + className);
+    System.out.println("Р“РѕРґ РѕР±СѓС‡РµРЅРёСЏ: " + yearOfStudy);
     System.out.println("");
-    System.out.println("Ученики:");
+    System.out.println("РЈС‡РµРЅРёРєРё:");
 
     int i = 0;
     while (students[i].GetFam() != "")
@@ -130,7 +130,7 @@ public void DispFullInfo()
     }
 }
 
-// Функция по нахождению лучших учеников в классе
+// Р¤СѓРЅРєС†РёСЏ РїРѕ РЅР°С…РѕР¶РґРµРЅРёСЋ Р»СѓС‡С€РёС… СѓС‡РµРЅРёРєРѕРІ РІ РєР»Р°СЃСЃРµ
 public boolean BestStud()
 {
     double[] mas_m = new double[32];
@@ -181,7 +181,7 @@ public boolean BestStud()
     return exit;
 }
 
-// Функция по нахождению худших учеников в классе
+// Р¤СѓРЅРєС†РёСЏ РїРѕ РЅР°С…РѕР¶РґРµРЅРёСЋ С…СѓРґС€РёС… СѓС‡РµРЅРёРєРѕРІ РІ РєР»Р°СЃСЃРµ
 public boolean BedStud()
 {
     double[] mas_m = new double[32];
