@@ -1,16 +1,16 @@
-п»їimport java.util.Scanner;
+package School;
+import java.util.Scanner;
 
-public class Start
-{
+public class Start {
 
 	public static void main(String[] args)
 	{
 		//Scanner in = new Scanner(System.in);
-                String os = System.getProperty("os.name");
-		String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
-		Scanner in = new Scanner(System.in, consoleEncoding);
+        //String os = System.getProperty("os.name");
+		//String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
+		//Scanner in = new Scanner(System.in, consoleEncoding);
 		
-	        // РЎРѕР·РґР°РЅРёРµ РѕР±РЄРµРєС‚РѕРІ РєР»Р°СЃСЃРѕРІ
+	        // Создание обЪектов классов
 		//----------------------------------
 		Teacher[] teachers = new Teacher[3];
 	 	Lesson[] lessons = new Lesson[3];
@@ -21,20 +21,20 @@ public class Start
 		MyClass classNum1 = new MyClass();
 		//----------------------------------
 
-		// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РїРѕР»РµР№ РѕР±СЉРµРєС‚РѕРІ РєР»Р°СЃСЃРѕРІ
+		// Инициализация полей объектов классов
 		//---------------------------------------------------------------------------------
 		int j = 0;
 		for (j = 0; j < 3; j++)
 			teachers[j] = new Teacher();
-		teachers[0].Set("РРІР°РЅРѕРІР°", "РњР°СЂРёРЅР°", "Р’РёС‚Р°Р»СЊРµРІРЅР°");
-		teachers[1].Set("РџРѕРіСЂРµР±РЅРµРєРѕРІ", "РќРёРєРѕР»Р°Р№", "РњРёС…Р°Р№Р»РѕРІРёС‡");
-		teachers[2].Set("Р‘Р°СЏРЅРѕРІР°", "Р›СЋРґРјРёР»Р°", "РђРЅР°С‚РѕР»СЊРµРІРЅР°");
+		teachers[0].Set("Иванова", "Марина", "Витальевна");
+		teachers[1].Set("Погребнеков", "Николай", "Михайлович");
+		teachers[2].Set("Баянова", "Людмила", "Анатольевна");
 		
 		for (j = 0; j < 3; j++)
 			lessons[j] = new Lesson();
-		lessons[0].Set("РҐРёРјРёСЏ", teachers[0]);
-		lessons[1].Set("РћР±С‰РµСЃС‚РІРѕР·РЅР°РЅРёРµ", teachers[1]);
-		lessons[2].Set("РњР°С‚РµРјР°С‚РёРєР°", teachers[2]);
+		lessons[0].Set("Химия", teachers[0]);
+		lessons[1].Set("Обществознание", teachers[1]);
+		lessons[2].Set("Математика", teachers[2]);
 		
 		for (j = 0; j < 3; j++)
 		{
@@ -54,63 +54,102 @@ public class Start
 		
 		for (j = 0; j < 3; j++)
 			students[j] = new Student();
-		students[0].Set("РЎРёРґРѕСЂРѕРІ", "РђРЅС‚РѕРЅ", "Р’РёС‚Р°Р»СЊРµРІРёС‡", marks1, 3, lessons, 3);
-		students[1].Set("Р“РµСЂР°СЃРёРјРѕРІ", "Р’Р»Р°РґРёРјРёСЂ", "РђРЅР°С‚РѕР»СЊРµРІРёС‡", marks2, 3, lessons, 3);
-		students[2].Set("РРІР°РЅРѕРІ", "РќРёРєРѕР»Р°Р№", "Р›СЊРІРѕРІРёС‡", marks3, 3, lessons, 3);
+		students[0].Set("Сидоров", "Антон", "Витальевич", marks1, 3, lessons, 3);
+		students[1].Set("Герасимов", "Владимир", "Анатольевич", marks2, 3, lessons, 3);
+		students[2].Set("Иванов", "Николай", "Львович", marks3, 3, lessons, 3);
 
-		classNum1.Set("2Р’", "2010", students, 3);
+		classNum1.Set("2В", "2010", students, 3);
 		//----------------------------------------------------------------------------------
 
 		int i = 0;
 
-		// Р’С‹РІРѕРґ РІСЃРµС… РґР°РЅРЅС‹С… РЅР° СЌРєСЂР°РЅ:
+		/*
+		// Вывод всех данных на экран:
 		//----------------------------------------------------------------------------------
 		
-		System.out.println("Р’С‹РІРѕРґ РІСЃРµС… СѓС‡РёС‚РµР»РµР№:");
+		System.out.println("Вывод всех учителей:");
 		for (i = 0; i < 3; i++)
 			teachers[i].DisplayInfo();
 
 		System.out.println("\n\n");
 
-		System.out.println("Р’С‹РІРѕРґ РІСЃРµС… СѓСЂРѕРєРѕРІ:");
+		System.out.println("Вывод всех уроков:");
 		for (i = 0; i < 3; i++)
 			lessons[i].DisplayInfo();
 
 		System.out.println("\n\n");
 
-		System.out.println("Р’С‹РІРѕРґ РІСЃРµС… СѓС‡РµРЅРёРєРѕРІ:");
+		System.out.println("Вывод всех учеников:");
 		for (i = 0; i < 3; i++)
 			students[i].DisplayShortInfo();
 
 		System.out.println("\n\n");
 
-		System.out.println("Р’С‹РІРѕРґ РљР»Р°СЃСЃР° СѓС‡РµРЅРёРєРѕРІ:");
+		System.out.println("Вывод Класса учеников:");
 		classNum1.DisplayShortInfo();		
 		
 		//----------------------------------------------------------------------------------
 
 		System.out.println("\n\n");
 		
-		// Р›СѓС‡С€РёРµ Рё С…СѓС‡С€РёРµ СѓС‡РµРЅРёРєРё РІ РєР»Р°СЃСЃРµ
+		// Лучшие и хучшие ученики в классе
 		//----------------------------------------------------------------------------------
-                System.out.println("************************Р¤СѓРЅРєС†РёСЏ РїРѕРёСЃРєР° Р»СѓС‡С€РёС… СѓС‡РµРЅРёРєРѕРІ РІ РєР»Р°СЃСЃРµ***************************");
-    		System.out.println("Р›СѓС‡С€РёРµ СѓС‡РµРЅРёРєРё РєР»Р°СЃСЃР° в„–1:");
-    		classNum1.BestStud();
-    		System.out.println("***************************************************");
+        System.out.println("************************Функция поиска лучших учеников в классе***************************");
+		System.out.println("Лучшие ученики класса №1:");
+		classNum1.BestStud();
+		System.out.println("***************************************************");
 
-                System.out.println("\n\n");
-		
-    		System.out.println("************************Р¤СѓРЅРєС†РёСЏ РїРѕРёСЃРєР° С…СѓРґС€РёС… СѓС‡РµРЅРёРєРѕРІ РІ РєР»Р°СЃСЃРµ***************************");
-    		System.out.println("РҐСѓРґС€РёРµ СѓС‡РµРЅРёРєРё РєР»Р°СЃСЃР° в„–1:");
-    		classNum1.BedStud();
-    		System.out.println("***************************************************");
+        System.out.println("\n\n");
+	
+		System.out.println("************************Функция поиска худших учеников в классе***************************");
+		System.out.println("Худшие ученики класса №1:");
+		classNum1.BedStud();
+		System.out.println("***************************************************");
 		//----------------------------------------------------------------------------------
 		
 		System.out.println("\n\n");
 		
-		System.out.println("РўРµСЃС‚ РІРІРѕРґР° СЂСѓСЃСЃРєРёС… СЃРёРјРІРѕР»РѕРІ РЅР° РїСЂРёРјРµСЂРµ РІРІРѕРґР° СѓС‡РёС‚РµР»СЏ:");				
-		teachers[0].InpFIO();
-		teachers[0].DisplayInfo(); 
+		//System.out.println("Тест ввода русских символов на примере ввода учителя:");				
+		//teachers[0].InpFIO();
+		//teachers[0].DisplayInfo();
+		*/
+		
+		System.out.println("6) Продемонстрировать работу с массивом объектов");
+		System.out.println("===========================================================================================");
+		System.out.println("На примере объектов класса Оценка");
+		marks1[0].Set(4);
+		marks1[1].Set(4);
+		marks1[2].Set(4);
+		for (i = 0; i < 3; i++)
+			marks1[i].DisplayValue();
+		
+		
+		System.out.println("\n\n");
+		
+		System.out.println("7) Продемонстрировать возврат целочисленного значения из метода через вспомогательный класс");
+		System.out.println("===========================================================================================");
+		System.out.println("На примере объектов класса Student и Mark");
+		Mark markAuxiliary = new Mark();
+		markAuxiliary = students[0].GetMarkByNumber(1);
+		markAuxiliary.DisplayValue();
+		
+		
+		System.out.println("\n\n");
+		
+		System.out.println("8) Продемонстрировать разумное использование оператора this");
+		System.out.println("===========================================================================================");
+		System.out.println("На примере класса Урок");
+		// В методе DisplayImportantInfo() вызывается метод DisplayInfo() через указатель this
+		lessons[0].DisplayImportantInfo();
+		
+		
+		System.out.println("\n\n");
+		
+		System.out.println("9) Продемонстрировать обработку строк (String)");
+		System.out.println("===========================================================================================");
+		System.out.println("На примере класса Учитель, добавление ко всем полям пробелов");
+		teachers[0].AdditionSapces();
+		teachers[0].DisplayInfo();
+		
 	}
-
 }

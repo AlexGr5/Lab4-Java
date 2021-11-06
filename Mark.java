@@ -1,65 +1,67 @@
-п»їimport java.util.Scanner;
+package School;
+import java.util.Scanner;
 
-// РљР»Р°СЃСЃ РћС†РµРЅРєР°
-public class Mark
-{
-    private int value = 0;          // РћС†РµРЅРєР°
+//Класс Оценка
+public class Mark {
+
+	private int value = 0;          // Оценка
 
 
-    	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	// Конструктор
 	public Mark()
 	{
 	    value = 0;
 	}
 	
-	// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚СЂСѓРєС‚СѓСЂС‹ РћС†РµРЅРєР°
+	// Инициализация структуры Оценка
 	public void Set(int v)
 	{
 	    value = v;
 	}
 	
-	// РџРѕР»СѓС‡РµРЅРёРµ РѕС†РµРЅРєРё
+	// Получение оценки
 	public int Get()
 	{
 	    return value;
 	}
 	
-	// Р’РІРѕРґ РґР°РЅРЅС‹С… РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ РћС†РµРЅРєР°
+	// Ввод данных в структуру Оценка
 	public void InpMark()
 	{
-	    //Scanner in = new Scanner(System.in);
-	    String os = System.getProperty("os.name");
-            String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
-            Scanner in = new Scanner(System.in, consoleEncoding);
+	    Scanner in = new Scanner(System.in);
+	    //String os = System.getProperty("os.name");
+	    //String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
+	    //Scanner in = new Scanner(System.in, consoleEncoding);
+	    
 	    String str = new String();
 	    //value = in.nextInt();
 	    int fl = 0;
 	    int number = 0;
 	    while (fl == 0)
 	    {
-		System.out.print("Р’РІРµРґРёС‚Рµ РѕС†РµРЅРєСѓ: ");
-		
-		if (in.hasNextInt()) {
-          	 	number = in.nextInt();
-			str = in.nextLine();
-           		value = number;
-		        fl = 1;
-       		} 
-		else {
-           		System.out.println("РР·РІРёРЅРёС‚Рµ, РЅРѕ СЌС‚Рѕ СЏРІРЅРѕ РЅРµ С‡РёСЃР»Рѕ. Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ Р·Р°РЅРѕРІРѕ!");
-			System.out.println("\n");
-       		}
+			System.out.print("Введите оценку: ");
+			
+			if (in.hasNextInt()) 
+			{
+		      	 	number = in.nextInt();
+		      	 	str = in.nextLine();
+		       		value = number;
+			        fl = 1;
+		   	} 
+			else 
+			{
+		       		System.out.println("Извините, но это явно не число. Введите число заново!");
+		       		System.out.println("\n");
+		   	}
 	    }
 	    System.out.println();
 	    in.close();
 	}
 	
-	// Р’С‹РІРѕРґ РґР°РЅРЅС‹С… РёР· СЃС‚СЂСѓРєС‚СѓСЂС‹
+	// Вывод данных из структуры
 	public void DisplayValue()
 	{
-	    System.out.println("РћС†РµРЅРєР°: " + value);
+	    System.out.println("Оценка: " + value);
 	
 	}
-	
-
 }

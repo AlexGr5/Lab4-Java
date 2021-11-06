@@ -1,33 +1,34 @@
-п»їimport java.util.*;
+package School;
+import java.util.*;
 
-// РљР»Р°СЃСЃ РЈСЂРѕРєРё
-public class Lesson
-{
-    private String nameLesson = "";       	// РќР°Р·РІР°РЅРёРµ РїСЂРµРґРјРµС‚Р°
-    private Teacher teacher = new Teacher();    // РЈС‡РёС‚РµР»СЊ
+//Класс Уроки
+public class Lesson {
 
-    	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	private String nameLesson = "";       	// Название предмета
+    private Teacher teacher = new Teacher();    // Учитель
+
+    	// Конструктор
 	public Lesson()
 	{
 	    this.nameLesson = "";
 	    this.teacher.Set("", "", "");
 	}
 	
-	// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚СЂСѓРєС‚СѓСЂС‹ РЈСЂРѕРєРё
+	// Инициализация структуры Уроки
 	public void Set(String Name_Less, Teacher t)
 	{
 	    nameLesson = Name_Less;
 	    teacher = t;
 	}
 	
-	// РћР±РЅСѓР»РµРЅРёРµ РїРѕР»РµР№
+	// Обнуление полей
 	public void Null()
 	{
 	    this.nameLesson = "";
 	    this.teacher.Set("", "", "");
 	}
 	
-	// Р¤СѓРЅ-РёРё РїРѕР»СѓС‡РµРЅРёСЏ РґР°РЅРЅС‹С… РёР· РїРѕР»РµР№
+	// Фун-ии получения данных из полей
 	public String GetNameLess()
 	{
 	    return this.nameLesson;
@@ -38,15 +39,15 @@ public class Lesson
 	    return this.teacher;
 	}
 	
-	// Р’РІРѕРґ РЅР°Р·РІР°РЅРёСЏ СѓСЂРѕРєР°
+	// Ввод названия урока
 	public void InpInConsol(Teacher t)
 	{
 
-	    //Scanner in = new Scanner(System.in);
-	    String os = System.getProperty("os.name");
-            String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
-            Scanner in = new Scanner(System.in, consoleEncoding);
-	    System.out.print("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РїСЂРµРґРјРµС‚Р°: ");
+	    Scanner in = new Scanner(System.in);
+	    //String os = System.getProperty("os.name");
+        //String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
+        //Scanner in = new Scanner(System.in, consoleEncoding);
+	    System.out.print("Введите название предмета: ");
 	    nameLesson = in.nextLine();
 	    System.out.println();
 	    teacher = t;
@@ -54,13 +55,18 @@ public class Lesson
 	
 	}
 	
-	// Р’С‹РІРѕРґ СѓСЂРѕРєРѕРІ, РїРµСЂРµРґР°РµРј Р°РґСЂРµСЃ, РіРґРµ Р±СѓРґРµС‚ С…СЂР°РЅРёС‚СЊСЃСЏ РёРЅС„РѕСЂРјР°С†РёСЏ
+	// Вывод уроков, передаем адрес, где будет храниться информация
 	public void DisplayInfo()
 	{
-	    System.out.println("РќР°Р·РІР°РЅРёРµ РїСЂРµРґРјРµС‚Р°: " + nameLesson);
+	    System.out.println("Название предмета: " + nameLesson);
 	    teacher.DisplayInfo();
 	}
 	
-	
-
+	// Вывод урока с подписью, что этот урок очень важен
+    public void DisplayImportantInfo()
+    {
+    	System.out.println("Этот урок очень важен!\n");
+        // Вызыв метода через указатель this
+        this.DisplayInfo();
+    }
 }

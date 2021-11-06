@@ -1,14 +1,15 @@
-п»їimport java.util.Scanner;
+package School;
+import java.util.Scanner;
 
-// РљР»Р°СЃСЃ РЈС‡РёС‚РµР»СЊ
-public class Teacher
-{
-    private String fam = "";        // Р¤Р°РјРёР»РёСЏ
-    private String name = "";       // РРјСЏ
-    private String otch = "";       // РћС‚С‡РµСЃС‚РІРѕ
+//Класс Учитель
+public class Teacher {
+
+	private String fam = "";        // Фамилия
+    private String name = "";       // Имя
+    private String otch = "";       // Отчество
 
 
-	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	// Конструктор
 	public Teacher()
 	{
 	    fam = "";
@@ -17,7 +18,7 @@ public class Teacher
 	}
 	
 	
-	// Р¤СѓРЅ-РёРё РїРѕР»СѓС‡РµРЅРёСЏ РґР°РЅРЅС‹С… РёР· РїРѕР»РµР№
+	// Фун-ии получения данных из полей
 	public String GetFam()
 	{
 	    return this.fam;
@@ -33,7 +34,7 @@ public class Teacher
 	    return this.otch;
 	}
 	
-	// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚СЂСѓРєС‚СѓСЂС‹ РЈС‡РёС‚РµР»СЊ
+	// Инициализация структуры Учитель
 	public void Set(String Fam_s, String Name_s, String Otch_s)
 	{
 	    this.fam = Fam_s;
@@ -41,32 +42,38 @@ public class Teacher
 	    this.otch = Otch_s;
 	}
 	
-	// Р’РІРѕРґ СѓС‡РёС‚РµР»СЏ
+	// Ввод учителя
 	public void InpFIO()
 	{
 	    //String encoding = System.getProperty("console.encoding", "utf-8");
 	    //Scanner in = new Scanner(System.in, encoding);
 
-	    String os = System.getProperty("os.name");
-            String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
-            Scanner in = new Scanner(System.in, consoleEncoding);
+	    //String os = System.getProperty("os.name");
+        //String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
+        //Scanner in = new Scanner(System.in, consoleEncoding);
 
-	    //Scanner in = new Scanner(System.in);  
-	    System.out.println("Р’РІРµРґРёС‚Рµ Р¤Р°РјРёР»РёСЋ СѓС‡РёС‚РµР»СЏ: ");
+	    Scanner in = new Scanner(System.in);  
+	    System.out.println("Введите Фамилию учителя: ");
 	    fam = in.nextLine();
-	    System.out.println("Р’РІРµРґРёС‚Рµ РёРјСЏ СѓС‡РёС‚РµР»СЏ: ");
+	    System.out.println("Введите имя учителя: ");
 	    name = in.nextLine();
-	    System.out.println("Р’РІРµРґРёС‚Рµ РѕС‚С‡РµСЃС‚РІРѕ СѓС‡РёС‚РµР»СЏ: ");
+	    System.out.println("Введите отчество учителя: ");
 	    otch = in.nextLine();
 	    in.close();
 	}
 	
-	// Р’С‹РІРѕРґ СѓС‡РёС‚РµР»СЏ
+	// Вывод учителя
 	public void DisplayInfo()
 	{
-	    System.out.println("Р¤РРћ СѓС‡РёС‚РµР»СЏ: " + fam + " " + name + " " + otch);
+	    System.out.println("ФИО учителя: " + fam + " " + name + " " + otch);
 	
 	}
 	
-	
+	// Обработка строк
+	public void AdditionSapces()
+	{
+		fam = fam + "  ";
+		name = name + "  ";
+		otch = otch + "  ";
+	}
 }
