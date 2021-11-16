@@ -4,13 +4,23 @@ import java.util.Scanner;
 //Класс Оценка
 public class Mark {
 
-	private int value = 0;          // Оценка
+	private int value;          // Оценка
+	
+	private static Mark lastMark;
+	private Mark prev;
+	private Mark next;
 
 
 	// Конструктор
 	public Mark()
 	{
 	    value = 0;
+	}
+	
+	// Конструктор с параметрами
+	public Mark(int value)
+	{
+	    this.value = value;
 	}
 	
 	// Инициализация структуры Оценка
@@ -63,5 +73,46 @@ public class Mark {
 	{
 	    System.out.println("Оценка: " + value);
 	
+	}
+	
+	// Новый список
+	public static void NewList()
+	{
+		lastMark = null;
+	}
+	
+	// Добавление элемента в конец списка
+	public void Add()
+	{
+	    if (lastMark == null)
+	        this.prev = null;
+	    else 
+	    { 
+	        lastMark.next = this;
+	        prev = lastMark;
+	    }
+	    lastMark = this;
+	    this.next = null;
+	}
+
+	// Вывод на дисплей содержимого списка
+	public static void reprint()
+	{
+	    Mark uk;   // Вспомогательная ссылка
+	    uk = lastMark;
+	    if (uk == null) 
+	    { 
+	    	System.out.println("Список пуст!"); 
+	        return;
+	    }
+	    else 
+	    	System.out.println("\nСодержимое списка:\n");
+
+	    // Цикл печати в обратном порядке значений элементов списка:
+	    while (uk != null)
+	    {
+	    	System.out.println(uk.value + "\t");
+	        uk = uk.prev;
+	    }
 	}
 }

@@ -10,7 +10,9 @@ public class Start {
 		//String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
 		//Scanner in = new Scanner(System.in, consoleEncoding);
 		
-	        // Создание обЪектов классов
+		/*
+		
+	    // Создание обЪектов классов
 		//----------------------------------
 		Teacher[] teachers = new Teacher[3];
 	 	Lesson[] lessons = new Lesson[3];
@@ -62,8 +64,12 @@ public class Start {
 		//----------------------------------------------------------------------------------
 
 		int i = 0;
-
+		
+		
+		*/
+		
 		/*
+		
 		// Вывод всех данных на экран:
 		//----------------------------------------------------------------------------------
 		
@@ -114,6 +120,8 @@ public class Start {
 		//teachers[0].DisplayInfo();
 		*/
 		
+		/*
+		
 		System.out.println("6) Продемонстрировать работу с массивом объектов");
 		System.out.println("===========================================================================================");
 		System.out.println("На примере объектов класса Оценка");
@@ -138,18 +146,79 @@ public class Start {
 		
 		System.out.println("8) Продемонстрировать разумное использование оператора this");
 		System.out.println("===========================================================================================");
-		System.out.println("На примере класса Урок");
-		// В методе DisplayImportantInfo() вызывается метод DisplayInfo() через указатель this
-		lessons[0].DisplayImportantInfo();
+		System.out.println("На примере класса Оценка");
+		// Формирование объектов класса Mark:
+		Mark List1 = new Mark(1);
+		Mark List2 = new Mark(2);
+		Mark List3 = new Mark(3);
+		Mark List4 = new Mark(4);
+
+		Mark.NewList();
 		
+		// Вызов статической компанентной функции:
+		Mark.reprint();
+
+		// Включение созданных компанентов в двусвязанный список:
+		List1.Add(); List2.Add(); List3.Add(); List4.Add();
+
+		// Печать в обратном порядке значений элементов списка:
+		Mark.reprint();
 		
 		System.out.println("\n\n");
 		
 		System.out.println("9) Продемонстрировать обработку строк (String)");
 		System.out.println("===========================================================================================");
+		System.out.println("На примере класса Учитель, сравнение строк\n");
+
+		System.out.println("У учителей:");
+		teachers[0].DisplayInfo();
+		teachers[1].DisplayInfo();
+		if (teachers[0].GetFam().equals(teachers[1].GetFam()))
+			System.out.println("Фамилии одинаковые!\n");
+		else
+			System.out.println("Фамилии разные!\n");
+		
 		System.out.println("На примере класса Учитель, добавление ко всем полям пробелов");
 		teachers[0].AdditionSapces();
 		teachers[0].DisplayInfo();
+		System.out.println();
+		
+		System.out.println("На примере класса Учитель, подстроки");
+		System.out.println(teachers[0].First4SimbFromFIO());
+		
+		*/
+		
+		
+		// Лабораторная №8
+		//===========================================================================================================
+		System.out.print("Лабраторная 8:\n\n");
+		System.out.print("=========\nМодифицировать ваши проекты на С++, C# и Java путем добавления в один из классов\nкак минимум одного статического поля и одного статического метода.\n=========\n\n");
+
+		System.out.print("(Использовались статический член класса\'Mark\' \'lastMark\'и\nстатические методы класса \'NewList\' и \'reprint\')\n\n");
+		
+		// Формирование объектов класса Mark:
+		Mark List1 = new Mark(1);
+		Mark List2 = new Mark(2);
+		Mark List3 = new Mark(3);
+		Mark List4 = new Mark(4);
+
+		System.out.print("Вызов статической компанентной функции: \'Новый список\'\n\n");
+		// Вызов статической компанентной функции:
+		Mark.NewList();
+
+		System.out.print("Вызов статической компанентной функции: \'Напечатать список\'\n\n");
+		// Вызов статической компанентной функции:
+		Mark.reprint();
+
+		System.out.print("\n\nДобавление элементов в список.\n\n");
+		// Включение созданных компанентов в двусвязанный список:
+		List1.Add(); List2.Add(); List3.Add(); List4.Add();
+
+		System.out.print("Вызов статической компанентной функции: \'Напечатать список\'\n\n");
+		System.out.print("===================================\n");
+		// Печать в обратном порядке значений элементов списка:
+		Mark.reprint();
+		System.out.print("\n===================================\n");
 		
 	}
 }

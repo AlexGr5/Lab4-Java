@@ -76,4 +76,10 @@ public class Teacher {
 		name = name + "  ";
 		otch = otch + "  ";
 	}
+	
+	// Обработка строк, сосздание новой строки из подстрок
+	public String First4SimbFromFIO()
+	{
+		return (fam.substring(0, 4) + name.substring(0, 4) + otch.substring(0, 4));
+	}
 }
