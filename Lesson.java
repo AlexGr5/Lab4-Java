@@ -7,13 +7,39 @@ public class Lesson {
 	private String nameLesson = "";       	// Название предмета
     private Teacher teacher = new Teacher();    // Учитель
 
-    	// Конструктор
+    // Конструктор
 	public Lesson()
 	{
 	    this.nameLesson = "";
 	    this.teacher.Set("", "", "");
 	}
 	
+	// Конструктор с одним параметром
+    public Lesson(String NameLesson)
+    {
+        nameLesson = NameLesson;
+        teacher.Set("", "", "");
+    }
+
+    // Конструктор с параметрами
+    public Lesson(String Name_Less, Teacher Teacher1)
+    {
+        nameLesson = Name_Less;
+        teacher = Teacher1;
+    }
+	
+    // Установить название урока
+    public void SetLesson(String NameLesson)
+    {
+        nameLesson = NameLesson;
+    }
+
+    // Установить учителя
+    public void SetTeacher(Teacher Teacher1)
+    {
+        teacher = Teacher1;
+    }
+    
 	// Инициализация структуры Уроки
 	public void Set(String Name_Less, Teacher t)
 	{

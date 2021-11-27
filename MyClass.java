@@ -24,6 +24,33 @@ public class MyClass {
 	    }
 	}
 	
+	// Конструктор с одним параметром
+    public MyClass(String ClassName)
+    {
+        className = ClassName;
+        yearOfStudy = "";
+        contStuds = 0;
+        Student S = new Student();
+        S.Null();
+        for (int i = 0; i< 32; i++)
+        {
+            students[i] = S;
+        }
+    }
+
+    // Конструктор с параметрами
+    public MyClass(String Name, String Year, Student[] mas, int LenStud)
+    {
+        this.className = Name;
+        this.yearOfStudy = Year;
+        this.contStuds = 0;
+        for (int i = 0; i < 32 && i < LenStud; i++)
+        {
+            students[i] = mas[i];
+            contStuds++;
+        }
+    }
+	
 	// Очищение полей структуры Класс
 	public void Null()
 	{
@@ -37,6 +64,28 @@ public class MyClass {
 	        students[i] = S;
 	    }
 	}
+	
+	// Установка Названия
+    public void SetName(String Name)
+    {
+        className = Name;
+    }
+
+    // Установка Года
+    public void SetYear(String Year)
+    {
+        yearOfStudy = Year;
+    }
+
+    // Установка учеников
+    public void SetStuds(Student[] mas, int LenStud)
+    {
+        for (int i = 0; i < 32 && i < LenStud; i++)
+        {
+            students[i] = mas[i];
+            contStuds++;
+        }
+    }
 	
 	// Инициализация структуры Класс
 	public void Set(String Name, String Year, Student mas[], int LenStud)
@@ -103,14 +152,13 @@ public class MyClass {
 	    System.out.println("Ученики:");
 	
 	    int i = 0;
-	    while (students[i].GetFam() != "")
+	    for(i = 0; i < contStuds; i++)
 	    {
 	        students[i].DisplayShortInfo();
-	        i++;
 	    }
 	}
 	
-	// Выод всех данных из структуры Класс
+	// Вывод всех данных из структуры Класс
 	public void DispFullInfo()
 	{
 	    System.out.println("Название класса: " + className);
@@ -119,10 +167,9 @@ public class MyClass {
 	    System.out.println("Ученики:");
 	
 	    int i = 0;
-	    while (students[i].GetFam() != "")
+	    for(i = 0; i < contStuds; i++)
 	    {
 	        students[i].DispFullInfo();
-	        i++;
 	    }
 	}
 	

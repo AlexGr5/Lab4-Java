@@ -17,6 +17,21 @@ public class Teacher {
 	    otch = "";
 	}
 	
+	// Конструктор с одним параметром
+    public Teacher(String Fam)
+    {
+        fam = Fam;
+        name = "";
+        otch = "";
+    }
+
+    // Конструктор с параметрами
+    public Teacher(String Fam, String Name, String Otch)
+    {
+        fam = Fam;
+        name = Name;
+        otch = Otch;
+    }
 	
 	// Фун-ии получения данных из полей
 	public String GetFam()
@@ -33,6 +48,24 @@ public class Teacher {
 	{
 	    return this.otch;
 	}
+	
+	// Установить фамилию
+    public void SetFam(String Fam)
+    {
+        fam = Fam;
+    }
+
+    // Установить имя
+    public void SetName(String Name)
+    {
+        name = Name;
+    }
+
+    // Установить отчество
+    public void SetOtch(String Otch)
+    {
+        otch = Otch;
+    }
 	
 	// Инициализация структуры Учитель
 	public void Set(String Fam_s, String Name_s, String Otch_s)

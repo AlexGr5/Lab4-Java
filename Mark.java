@@ -115,4 +115,17 @@ public class Mark {
 	        uk = uk.prev;
 	    }
 	}
+	
+	
+	// Поверхностная копия
+    public Mark ShallowCopy()
+    {
+        return (Mark)this;
+    }
+
+    // Конструктор копирования (Глубокая копия)
+    public Mark(Mark otherMark)
+    {
+        value = otherMark.value;
+    }
 }

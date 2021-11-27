@@ -9,6 +9,7 @@ public class Student {
     private String otch = "";           		// Отчество
     private Mark[] marks = new Mark[20];        // Массив оценок
     private Lesson[] lessons = new Lesson[20];  // Массив уроков
+    private int countLess = 0;					// Количество уроков
 
 
 	// Конструктор
@@ -32,6 +33,51 @@ public class Student {
 	    }
 	}
 	
+	// Конструктор с одним параметром
+    public Student(String Fam)
+    {
+        fam = Fam;
+        name = "";
+        otch = "";
+        Lesson L = new Lesson();
+        Mark M = new Mark();
+        L.Null();
+        M.Set(0);
+        countLess = 0;
+        for (int i = 0; i< 20; i++)
+        {
+            lessons[i] = L;
+        }
+
+        for (int i = 0; i< 20; i++)
+        {
+            marks[i] = M;
+        }
+
+    }
+
+    // Конструктор с параметрами
+    public Student(String Fam, String Name, String Otch, Mark[] mas_m, int LenMark, Lesson[] mas_l, int LenLess)
+    {
+        this.fam = Fam;
+        this.name = Name;
+        this.otch = Otch;
+
+        this.countLess = 0;
+
+        int i = 0;
+        for (i = 0; i < LenLess && i < 20; i++)
+        {
+            lessons[i] = mas_l[i];
+            this.countLess++;
+        }
+
+        for (i = 0; i < LenMark && i < 20; i++)
+        {
+            marks[i] = mas_m[i];
+        }
+    }
+	
 	// Очищение всех полей структуры Ученик (Student)
 	public void Null()
 	{
@@ -43,6 +89,7 @@ public class Student {
 	    Mark M = new Mark();
 	    L.Null();
 	    M.Set(0);
+	    this.countLess = 0;
 	    for (int i = 0; i < 20; i++)
 	    {
 	        lessons[i] = L;
@@ -89,7 +136,43 @@ public class Student {
 	    return l;
 	}
 	
-	
+	// Установка фамилии
+    public void SetFam(String Fam)
+    {
+        fam = Fam;
+    }
+
+    // Установка Имени
+    public void SetName(String Name)
+    {
+        name = Name;
+    }
+
+    // Установка Отчества
+    public void SetOtch(String Otch)
+    {
+        otch = Otch;
+    }
+
+    // Установка Оценок
+    public void SetMarks(Mark[] mas_m, int LenMark)
+    {
+        for (int i = 0; i < LenMark && i < 20; i++)
+        {
+            marks[i] = mas_m[i];
+        }
+    }
+
+    // Установка Уроков
+    public void SetLessons(Lesson[] mas_l, int LenLess)
+    {
+        int i = 0;
+        for (i = 0; i < LenLess && i < 20; i++)
+        {
+            lessons[i] = mas_l[i];
+            this.countLess++;
+        }
+    }
 	
 	// Инициализация структуры Ученик
 	public void Set(String Fam, String Name, String Otch, Mark mas_m[], int LenMark, Lesson mas_l[], int LenLess)
@@ -103,6 +186,7 @@ public class Student {
 	    for ( i = 0; i < LenLess && i < 20; i++)
 	    {
 	        lessons[i] = mas_l[i];
+	        this.countLess++;
 	    }
 	
 	    for (i = 0; i < LenMark && i < 20; i++)
@@ -138,6 +222,7 @@ public class Student {
 	        if (lessons[i].GetNameLess() == "")
 	        {
 	            lessons[i] = ls;
+	            this.countLess++;
 	            fl = true;
 	        }
 	    }
@@ -157,6 +242,7 @@ public class Student {
 	        {
 	            lessons[i] = ls;
 	            marks[i] = m;
+	            this.countLess++;
 	            fl = true;
 	        }
 	    }
@@ -200,10 +286,9 @@ public class Student {
 	
 	    System.out.println("Уроки:");
 	    int i = 0;
-	    while (lessons[i].GetNameLess() != "")
+	    for(i = 0; i < countLess; i++)
 	    {
 	        System.out.println(" * " + lessons[i].GetNameLess() + " * " + marks[i].Get() + " * ");
-	        i++;
 	    }
 	}
 	
