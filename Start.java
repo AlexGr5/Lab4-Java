@@ -223,6 +223,7 @@ public class Start {
 		*/
 		
 		
+		/*
 		// Создание обЪектов классов
 		//----------------------------------
 		Teacher[] teachers = new Teacher[3];
@@ -376,5 +377,20 @@ public class Start {
 		markTestCopy1.DisplayValue();
 		markTestCopy2.DisplayValue();
 		System.out.println("\n\n");
+		*/
+		
+		Mark mark1 = new Mark();
+
+		System.out.println("Лабораторная 10\n");
+		System.out.println("Введите оценку - число в пределах от 1 до 5!\n");
+
+		while (mark1.Get() == 0)
+		{
+			mark1.InpMark();
+		}
+
+		System.out.println("Введенная оценка: " + mark1.Get());
+		
+		
 	}
 }

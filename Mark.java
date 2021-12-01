@@ -20,13 +20,17 @@ public class Mark {
 	// Конструктор с параметрами
 	public Mark(int value)
 	{
-	    this.value = value;
+		this.value = 0;
+        if (IsRightMark(value))
+            this.value = value;
 	}
 	
 	// Инициализация структуры Оценка
 	public void Set(int v)
 	{
-	    value = v;
+		this.value = 0;
+        if (IsRightMark(v))
+            this.value = v;
 	}
 	
 	// Получение оценки
@@ -35,6 +39,7 @@ public class Mark {
 	    return value;
 	}
 	
+	/*
 	// Ввод данных в структуру Оценка
 	public void InpMark()
 	{
@@ -67,6 +72,36 @@ public class Mark {
 	    System.out.println();
 	    in.close();
 	}
+	*/
+	
+	// Ввод данных в структуру Оценка
+    public void InpMark()
+    {
+    	Scanner in = new Scanner(System.in);
+    	String str = new String();
+        //string mark;
+    	int number = 0;
+        //Console.Write("Введите оценку: ");
+        //mark = Console.ReadLine();
+    	System.out.print("Введите оценку: ");
+        try                                                 // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch          
+        {
+        	if (in.hasNextInt()) 
+			{
+		      	 	number = in.nextInt();
+		      	 	str = in.nextLine();
+		       		//value = number;
+		      	 	Set(number);
+		   	} 
+        	else
+        		throw new Exception("It string is not number!");       // выбрасывается исключение типа const char*
+        }
+        catch (Exception ex)                       // обработчик исключений типа const char*
+        {
+        	System.out.print("Error: " + ex.getMessage() + '\n');
+            //std::cerr << "Error: " << "It string is not number!" << '\n';
+        }
+    }
 	
 	// Вывод данных из структуры
 	public void DisplayValue()
@@ -128,4 +163,24 @@ public class Mark {
     {
         value = otherMark.value;
     }
+    
+    // Проверка числа на подходяее для оценки
+    public boolean IsRightMark(int mark)
+    {
+        boolean res = true;
+        try                                                    // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch
+        {
+            if (mark < 1 || mark > 5)                          // Если пользователь ввел неверное число, то выбрасывается исключение
+                throw new Exception("Incorrect value.");       // выбрасывается исключение типа const char*
+            return res;
+        }
+        catch (Exception ex)           						   // обработчик исключений типа const char*
+        {
+        	System.out.println("Error: " + ex.getMessage() + '\n');
+            res = false;
+            return res;
+        }
+        //return res;
+    }
+    
 }
