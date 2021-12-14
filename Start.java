@@ -379,6 +379,7 @@ public class Start {
 		System.out.println("\n\n");
 		*/
 		
+		/*
 		Mark mark1 = new Mark();
 
 		System.out.println("Лабораторная 10\n");
@@ -390,7 +391,45 @@ public class Start {
 		}
 
 		System.out.println("Введенная оценка: " + mark1.Get());
+		*/
 		
+		Mark[] mark1 = new Mark[3]; Mark [][] mark2 = new Mark[2][2];
+
+		mark1[0] = new Mark();
+		mark1[1] = new Mark();
+		mark1[2] = new Mark();
+
+		for (int i = 0; i < 2; i++)
+			for (int j = 0; j < 2; j++)
+				mark2[i][j] = new Mark();
+
+
+		// Присваивание
+		//=================================
+		mark1[0].Set(3);
+		mark1[1].Set(4);
+		mark1[2].Set(5);
+
+		int bases = 4;
+
+		for (int i = 0; i < 2; i++)
+			for (int j = 0; j < 2; j++)
+				mark2[i][j].Set(bases + j);
+		//=================================
+
+		// Вывод
+		//=================================
+		System.out.println("Одномерный массив размером [3]");
+		for (int i = 0; i < 3; i++)
+			mark1[i].DisplayValue();
+
+		System.out.println();
+
+		System.out.println("Двумерный массив размером [2][2]");
+		for (int i = 0; i < 2; i++)
+			for (int j = 0; j < 2; j++)
+				mark2[i][j].DisplayValue();
+		//=================================
 		
 	}
 }
