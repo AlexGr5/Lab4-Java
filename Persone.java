@@ -1,39 +1,50 @@
 package School;
+
 import java.util.Scanner;
 
-//Класс Учитель
-public class Teacher extends Persone implements IHuman {
+interface IHuman
+{
+    // Ввод ФИО человека
+    void InpFIO();
 
-	//private String fam = "";        // Фамилия
-    //private String name = "";       // Имя
-    //private String otch = "";       // Отчество
+    // Вывод человека
+    void DisplayInfo();
+
+    // Виртуальная/не виртуальная функция вывода сообщения на екран, кем является человек (рабочим, учителем, учеником)
+    String WhoIs();
+}
+
+
+// Класс Персона
+public abstract class Persone implements IHuman {
+	
+	protected String fam = "";        // Фамилия
+	protected String name = "";       // Имя
+	protected String otch = "";       // Отчество
 
 
 	// Конструктор
-	public Teacher()
+	public Persone()
 	{
-		super("", "", "");
-	    //fam = "";
-	    //name = "";
-	    //otch = "";
+	    fam = "";
+	    name = "";
+	    otch = "";
 	}
 	
 	// Конструктор с одним параметром
-    public Teacher(String Fam)
+    public Persone(String Fam)
     {
-    	super(Fam, "", "");
-        //fam = Fam;
-        //name = "";
-        //otch = "";
+        fam = Fam;
+        name = "";
+        otch = "";
     }
 
     // Конструктор с параметрами
-    public Teacher(String Fam, String Name, String Otch)
+    public Persone(String Fam, String Name, String Otch)
     {
-    	super(Fam, Name, Otch);
-        //fam = Fam;
-        //name = Name;
-        //otch = Otch;
+        fam = Fam;
+        name = Name;
+        otch = Otch;
     }
 	
 	// Фун-ии получения данных из полей
@@ -70,7 +81,7 @@ public class Teacher extends Persone implements IHuman {
         otch = Otch;
     }
 	
-	// Инициализация структуры Учитель
+	// Инициализация класса Персона
 	public void Set(String Fam_s, String Name_s, String Otch_s)
 	{
 	    this.fam = Fam_s;
@@ -78,8 +89,8 @@ public class Teacher extends Persone implements IHuman {
 	    this.otch = Otch_s;
 	}
 	
-	// Ввод учителя
-	/*@Override*/ public void InpFIO()
+	// Ввод человека
+	public void InpFIO()
 	{
 	    //String encoding = System.getProperty("console.encoding", "utf-8");
 	    //Scanner in = new Scanner(System.in, encoding);
@@ -89,19 +100,19 @@ public class Teacher extends Persone implements IHuman {
         //Scanner in = new Scanner(System.in, consoleEncoding);
 
 	    Scanner in = new Scanner(System.in);  
-	    System.out.println("Введите Фамилию учителя: ");
+	    System.out.println("Введите Фамилию: ");
 	    fam = in.nextLine();
-	    System.out.println("Введите имя учителя: ");
+	    System.out.println("Введите имя: ");
 	    name = in.nextLine();
-	    System.out.println("Введите отчество учителя: ");
+	    System.out.println("Введите отчество: ");
 	    otch = in.nextLine();
 	    in.close();
 	}
 	
-	// Вывод учителя
-	@Override public void DisplayInfo()
+	// Вывод человека
+	public void DisplayInfo()
 	{
-	    System.out.println("ФИО учителя: " + fam + " " + name + " " + otch);
+	    System.out.println("ФИО: " + fam + " " + name + " " + otch);
 	
 	}
 	
@@ -120,9 +131,9 @@ public class Teacher extends Persone implements IHuman {
 	}
 	
 	// Виртуальная/не виртуальная функция вывода сообщения на екран, кем является человек (рабочим, учителем, учеником)
-	@Override public String WhoIs()
+    public String WhoIs()
     {
-        return "учитель";
+        return "рабочий";
     }
 
     // Сказать привет
@@ -132,17 +143,24 @@ public class Teacher extends Persone implements IHuman {
     }
     
     // Поверхностная копия
-    public Teacher ShallowCopy()
+    public Persone ShallowCopy()
     {
-        return (Teacher)this;
+        return (Persone)this;
     }
 
     // Конструктор копирования (Глубокая копия)
-    public Teacher(Teacher otherMark)
+    public Persone(Persone otherMark)
     {
         fam = otherMark.fam;
         name = otherMark.name;
         otch = otherMark.otch;
     }
     
+    // Метод ToString
+    public String ToString()
+    {
+        return (fam + " " + name + " " + otch);
+    }
+
+
 }

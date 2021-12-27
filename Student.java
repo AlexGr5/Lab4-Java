@@ -2,11 +2,11 @@ package School;
 import java.util.Scanner;
 
 //Класс Ученик
-public class Student {
+public class Student extends Persone implements IHuman {
 
-	private String fam = "";            		// Фамилия
-    private String name = "";           		// Имя
-    private String otch = "";           		// Отчество
+	//private String fam = "";            		// Фамилия
+    //private String name = "";           		// Имя
+    //private String otch = "";           		// Отчество
     private Mark[] marks = new Mark[20];        // Массив оценок
     private Lesson[] lessons = new Lesson[20];  // Массив уроков
     private int countLess = 0;					// Количество уроков
@@ -15,9 +15,10 @@ public class Student {
 	// Конструктор
 	public Student()
 	{
-	    fam = "";
-	    name = "";
-	    otch = "";
+		super("", "", "");
+	    //fam = "";
+	    //name = "";
+	    //otch = "";
 	    Lesson L = new Lesson();
 	    Mark M = new Mark();
 	    L.Null();
@@ -36,9 +37,10 @@ public class Student {
 	// Конструктор с одним параметром
     public Student(String Fam)
     {
-        fam = Fam;
-        name = "";
-        otch = "";
+    	super(Fam, "", "");
+        //fam = Fam;
+        //name = "";
+        //otch = "";
         Lesson L = new Lesson();
         Mark M = new Mark();
         L.Null();
@@ -59,9 +61,10 @@ public class Student {
     // Конструктор с параметрами
     public Student(String Fam, String Name, String Otch, Mark[] mas_m, int LenMark, Lesson[] mas_l, int LenLess)
     {
-        this.fam = Fam;
-        this.name = Name;
-        this.otch = Otch;
+    	super(Fam, Name, Otch);
+        //this.fam = Fam;
+        //this.name = Name;
+        //this.otch = Otch;
 
         this.countLess = 0;
 
@@ -211,6 +214,22 @@ public class Student {
 	    in.close();
 	}
 	
+	// Ввод ФИО ученика в структуру
+		@Override public void InpFIO()
+		{
+		    Scanner in = new Scanner(System.in);
+		    //String os = System.getProperty("os.name");
+		    //String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866" : "utf-8");
+		    //Scanner in = new Scanner(System.in, consoleEncoding);
+		    System.out.print("Введите Фамилию ученика: ");
+		    fam = in.nextLine();
+		    System.out.print("Введите Имя ученика: ");
+		    name = in.nextLine();
+		    System.out.print("Введите Отчество ученика: ");
+		    otch = in.nextLine();
+		    in.close();
+		}
+	
 	// Добавление к ученику урока
 	// 0 - не удачно, 1 - удачно
 	public boolean AddLess(Lesson ls)
@@ -279,8 +298,21 @@ public class Student {
 	
 	// Вывод ученика
 	// Передаем ученика и флаг для различного вывода уроков и оценок
-	// fl_out (0 или 1)
 	public void DisplayShortInfo()
+	{
+	    System.out.println("ФИО ученика: " + fam + " " + name + " " + otch);
+	
+	    System.out.println("Уроки:");
+	    int i = 0;
+	    for(i = 0; i < countLess; i++)
+	    {
+	        System.out.println(" * " + lessons[i].GetNameLess() + " * " + marks[i].Get() + " * ");
+	    }
+	}
+	
+	// Вывод ученика
+	// Передаем ученика и флаг для различного вывода уроков и оценок
+	@Override public void DisplayInfo()
 	{
 	    System.out.println("ФИО ученика: " + fam + " " + name + " " + otch);
 	
@@ -312,4 +344,16 @@ public class Student {
 	        marks[i].DisplayValue();
 	    }
 	}
+	
+	// Виртуальная/не виртуальная функция вывода сообщения на екран, кем является человек (рабочим, учителем, учеником)
+	@Override public String WhoIs()
+    {
+        return "ученик";
+    }
+
+    // Сказать привет
+    public void SayHello()
+    {
+    	System.out.println( WhoIs() + " говорит привет!");
+    }
 }

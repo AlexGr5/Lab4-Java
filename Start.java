@@ -393,6 +393,8 @@ public class Start {
 		System.out.println("Введенная оценка: " + mark1.Get());
 		*/
 		
+		
+		/*
 		Mark[] mark1 = new Mark[3]; Mark [][] mark2 = new Mark[2][2];
 
 		mark1[0] = new Mark();
@@ -430,6 +432,139 @@ public class Start {
 			for (int j = 0; j < 2; j++)
 				mark2[i][j].DisplayValue();
 		//=================================
+		 * 
+		 */
+		
+		
+		
+		
+		
+		
+		
+		//Teacher teacher1 = new Teacher("Иванова", "Марина", "Витальевна");
+		//Persone persone1 = new Persone("Погребнеков", "Николай", "Михайлович");
+
+		/*
+		System.out.println("3) Продемонстрировать перегрузку метода базового");
+		System.out.println("  класса в производном классе(с вызовом метода базового");
+		System.out.println("  класса и без такого вызова)\n");
+
+		persone1.DisplayInfo();
+		teacher1.DisplayInfo();
+		System.out.println();
+		persone1.SayHello();
+		teacher1.SayHello();
+		System.out.println(persone1.WhoIs());
+		System.out.println(teacher1.WhoIs());
+		*/
+
+		/*
+		System.out.println("7) Придумать разумное использование виртуальных функций и создать их в вашем проекте.\n");
+
+		persone1.DisplayInfo();
+		teacher1.DisplayInfo();
+		System.out.println();
+		persone1.SayHello();
+		teacher1.SayHello();
+
+		Persone Person = new Persone("Сидоров", "Анатолий", "Михайлович");
+		Teacher Teach = new Teacher("Смирнов", "Владимир", "Васильевич");
+		Persone pPerson = Teach;
+		Teacher pTeach = Teach;
+		Persone pPerson2 = Person;
+
+		System.out.println("========================================================");
+		System.out.println();
+		System.out.println("Объект класса Учитель");
+		Teach.DisplayInfo();
+		System.out.println();
+		System.out.println("Указатель класса Персона на класс Учитель");
+		pPerson.DisplayInfo();
+		System.out.println();
+		System.out.println("Указатель класса Персона на класс Учитель");
+		pPerson2.DisplayInfo();
+		System.out.println();
+		System.out.println("Вызов виртуальной функции через не виртуальную базового класса");
+		System.out.println("от объекта класса Учитель");
+		Teach.SayHello();
+		System.out.println();
+		System.out.println("Вызов виртуальной функции через не виртуальную базового класса");
+		System.out.println("от объекта класса Персона");
+		Person.SayHello();
+		System.out.println();
+		System.out.println("от указателя Персона на объект класса Учитель");
+		System.out.println(pPerson.WhoIs());
+		System.out.println();
+		System.out.println("от указателя Персона на объект класса Персона");
+		System.out.println(pPerson2.WhoIs());
+		System.out.println();
+		System.out.println("от указателя Учитель на объект класса Учитель");
+		System.out.println(pTeach.WhoIs());
+		*/
+
+
+		//System.out.println("8) В проектах на C++,  Java, C# придумать разумное использовани\nабстрактного класса и создать его. Продемонстрировать его использование;\n");
+		//teacher1.InpFIO();
+		//System.out.println();
+		//teacher1.DisplayInfo();
+
+		//System.out.println("6) Заменить методы Display используя метод toString для Java\n");
+		//System.out.println("ФИО учителя: " + teacher1.ToString());
+
+		/*
+		Teacher teacher1 = new Teacher("Иванова", "Марина", "Витальевна");
+	    Student student1 = new Student();
+	    student1.SetFam("Герасимов");
+	    student1.SetName("Николай");
+	    student1.SetOtch("Анатольевич");
+
+		System.out.println("9) В  проектах Java, C# придумать разумное использование интерфейсов.\nПродемонстрировать их использование");
+		System.out.println();
+		
+		
+		teacher1.DisplayInfo();
+		student1.DisplayInfo();
+
+		System.out.println();
+
+		System.out.println(teacher1.WhoIs());
+		System.out.println(student1.WhoIs());
+		*/
+		
+
+		
+		System.out.println("10) Продемонстрировать различие между мелким и глубоким копированием:");
+		Teacher teacher1 = new Teacher("Погребников", "Николай", "Михайлович");
+		Teacher teacher2 = new Teacher("Иванова", "Марина", "Витальевна");
+
+		//markTestCopy2 = markTestCopy1.ShallowCopy();
+		teacher2 = teacher1;
+
+		System.out.println("Поверхностная копия 1-го объекта во 2-ой:");
+		teacher1.DisplayInfo();
+		teacher2.DisplayInfo();
+		System.out.println("");
+		System.out.println("Изменение 1-го объекта, а 2-ой не трогается:");
+		teacher1.Set("Погребников", "Николай", "Михайлович");
+		teacher1.DisplayInfo();
+		teacher2.DisplayInfo();
+		System.out.println("");
+
+		teacher1.Set("Герасимов", "Владимр", "Дмитриевич");
+		teacher2 = new Teacher(teacher1);
+
+		System.out.println("Глубокая копия 1-го объекта во 2-ой:");
+		teacher1.DisplayInfo();
+		teacher2.DisplayInfo();
+		System.out.println("");
+		System.out.println("Изменение 1-го объекта, а 2-ой не трогается:");
+		teacher1.Set("Иванова", "Марина", "Витальевна");
+		teacher1.DisplayInfo();
+		teacher2.DisplayInfo();
+		System.out.println("\n\n");
+		
+		
+		
 		
 	}
 }
