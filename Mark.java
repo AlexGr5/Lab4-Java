@@ -2,9 +2,9 @@ package School;
 import java.util.Scanner;
 
 //Класс Оценка
-public class Mark {
+public class Mark<T> {
 
-	private int value;          // Оценка
+	private T value;          // Оценка
 	
 	private static Mark lastMark;
 	private Mark prev;
@@ -14,27 +14,27 @@ public class Mark {
 	// Конструктор
 	public Mark()
 	{
-	    value = 0;
+	    //value = 0;
 	}
 	
 	// Конструктор с параметрами
-	public Mark(int value)
+	public Mark(T value)
 	{
-		this.value = 0;
-        if (IsRightMark(value))
+		//this.value = 0;
+        //if (IsRightMark(value))
             this.value = value;
 	}
 	
 	// Инициализация структуры Оценка
-	public void Set(int v)
+	public void Set(T v)
 	{
-		this.value = 0;
-        if (IsRightMark(v))
+		//this.value = 0;
+        //if (IsRightMark(v))
             this.value = v;
 	}
 	
 	// Получение оценки
-	public int Get()
+	public T Get()
 	{
 	    return value;
 	}
@@ -74,6 +74,7 @@ public class Mark {
 	}
 	*/
 	
+	/*
 	// Ввод данных в структуру Оценка
     public void InpMark()
     {
@@ -102,6 +103,7 @@ public class Mark {
             //std::cerr << "Error: " << "It string is not number!" << '\n';
         }
     }
+    */
 	
 	// Вывод данных из структуры
 	public void DisplayValue()
@@ -158,11 +160,13 @@ public class Mark {
         return (Mark)this;
     }
 
+    /*
     // Конструктор копирования (Глубокая копия)
     public Mark(Mark otherMark)
     {
         value = otherMark.value;
     }
+    */
     
     // Проверка числа на подходяее для оценки
     public boolean IsRightMark(int mark)

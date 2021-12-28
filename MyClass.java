@@ -173,6 +173,7 @@ public class MyClass {
 	    }
 	}
 	
+	/*
 	// Функция по нахождению лучших учеников в классе
 	public boolean BestStud()
 	{
@@ -273,4 +274,5 @@ public class MyClass {
 	
 	    return exit;
 	}
+	*/
 }

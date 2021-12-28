@@ -16,7 +16,7 @@ interface IHuman
 
 
 // Класс Персона
-public abstract class Persone implements IHuman {
+public /*abstract*/ class Persone implements IHuman {
 	
 	protected String fam = "";        // Фамилия
 	protected String name = "";       // Имя

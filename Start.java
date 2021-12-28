@@ -532,7 +532,7 @@ public class Start {
 		*/
 		
 
-		
+		/*
 		System.out.println("10) Продемонстрировать различие между мелким и глубоким копированием:");
 		Teacher teacher1 = new Teacher("Погребников", "Николай", "Михайлович");
 		Teacher teacher2 = new Teacher("Иванова", "Марина", "Витальевна");
@@ -562,9 +562,31 @@ public class Start {
 		teacher1.DisplayInfo();
 		teacher2.DisplayInfo();
 		System.out.println("\n\n");
+		*/
 		
 		
-		
+		Mark<Integer> [] MarksInt = new Mark [5];
+        Mark<Double> [] MarksDouble = new Mark [5];
+
+        for (int i = 0; i < 5; i++)
+        {
+            MarksInt[i] = new Mark<Integer>();
+            MarksInt[i].Set(i);
+            MarksDouble[i] = new Mark<Double>();
+            MarksDouble[i].Set((i + 0.7));
+        }
+
+        System.out.println("\nМассив Оценок с целыми значениями\n");
+        for (int i = 0; i < 5; i++)
+        {
+            MarksInt[i].DisplayValue();
+        }
+
+        System.out.println("\nМассив Оценок с нецелыми значениями\n");
+        for (int i = 0; i < 5; i++)
+        {
+            MarksDouble[i].DisplayValue();
+        }
 		
 	}
 }
