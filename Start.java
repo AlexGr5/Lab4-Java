@@ -1,5 +1,7 @@
 package School;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Start {
 
@@ -564,7 +566,7 @@ public class Start {
 		System.out.println("\n\n");
 		*/
 		
-		
+		/*
 		Mark<Integer> [] MarksInt = new Mark [5];
         Mark<Double> [] MarksDouble = new Mark [5];
 
@@ -587,6 +589,43 @@ public class Start {
         {
             MarksDouble[i].DisplayValue();
         }
+        */
 		
+		
+		// Create a list of parts.
+		ArrayList<Persone> persons = new ArrayList<Persone>();
+		
+		// Add parts to the list.
+        persons.add(new Persone("Иванова", "Марина", "Дмитриевна"));
+        persons.add(new Persone("Баянова", "Людмила", "Анатольевна"));
+        persons.add(new Teacher("Погребников", "Николай", "Михайлович"));
+        persons.add(new Persone("Синицына", "Лариса", "Анатольевна"));
+        persons.add(new Teacher("Герасимов", "Владимир", "Петрович"));
+        
+        
+        System.out.println("\nСписок Персон и Учителей:\n");
+        int i = 0;
+         for (i = 0; i < 5; i++)
+         {
+        	 persons.get(i).DisplayInfo();
+         }
+         
+         Persone FindPerson = persons.stream()
+        		  .filter(customer -> "Николай".equals(customer.GetName()))
+        		  .findAny()
+        		  .orElse(null);
+		
+         System.out.println("\n\nПоиск человека с именем Николай\n");
+         FindPerson.DisplayInfo();
+         
+         
+         persons.sort((a, b) -> a.GetFam().compareTo(b.GetFam()));
+         
+         
+         System.out.println("\nОтсортированный список по фамилиям:\n");
+          for (i = 0; i < 5; i++)
+          {
+         	 persons.get(i).DisplayInfo();
+          }
 	}
 }
